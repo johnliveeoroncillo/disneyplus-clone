@@ -1,3 +1,73 @@
-* {
+
+$ON_SURFACE: #e1e6f0;
+$ON_SURFACE_SEC: #8F98B2;
+$ON_SURFACE_100: #707A94;
+$BG_BODY: #0f1014;
+$DARK_BLUE: #081633;
+
+html, body {
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: start;
+}
+
+*, :after, :before {
+    --tw-shadow: 0 0 #0000;
+    --tw-border-opacity: 1;
+    border: 0 solid;
+    border-color: rgba(229,231,235,var(--tw-border-opacity));
     outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.on-surface {
+    color :$ON_SURFACE;
+}
+
+.on-surface-sec {
+    color: $ON_SURFACE_SEC;
+}
+
+.on-surface-100 {
+    color: $ON_SURFACE_100;
+}
+
+.bg {
+    background-color: $DARK_BLUE;
+}
+
+label[for="floating_outlined"] {
+    background-color: $DARK_BLUE;
+}
+
+.note {
+    width: 376px;
+    font-size: 9px;
+    line-height: 1.4;
+
+    a {
+        font-weight: 600;
+        color: $ON_SURFACE_SEC;
+    }
+}
+
+.inter-medium {
+    font-family: 'Inter Medium' !important;
+}
+
+.inter-regular {
+    font-family: 'Inter Regular' !important;
+}
+
+.inter-semibold {
+    font-family: 'Inter Regular' !important;
 }

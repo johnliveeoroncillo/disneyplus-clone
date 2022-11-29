@@ -2,9 +2,6 @@
   "name": "disney-plus",
   "version": "1.0.0",
   "private": true,
-  "engine": {
-      "node": "16.16.0"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

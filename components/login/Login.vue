@@ -5,10 +5,13 @@
             <img src="@/assets/img/logo.webp" class="w-24" />
         </div>
 
-        <div class="text-center relative z-10 h-[200px]">
-            <h1 class="font-semibold text-4xl on-surface inter-semibold">Log in or sign up to continue</h1>
+        <div class="relative z-10 h-[200px] w-[max-content] mx-auto">
+            <h1 class="font-semibold text-3xl on-surface inter-semibold block texxt-center">Log in or sign up to continue</h1>
 
-            <Login />
+            <transition name="slide">
+                <LoginCard v-if="login" />
+                 <LoginOtp v-else-if="otp" />
+            </transition>
         </div>
         <div class="bg-gradient-to-t from-black h-[600px]"></div>
         <div class="w-full bg-black pt-4 inter-regular">
@@ -103,3 +106,36 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            login: false,
+            otp: false,
+        }
+    },
+    created() {
+        this.$root.$on('login-otp', () => {
+            this.login = false;
+            setTimeout(() => {
+                this.otp = true;
+            }, 400);
+        })
+        this.$root.$on('login', () => {
+            this.otp = false;
+            setTimeout(() => {
+                this.login = true;
+            }, 400);
+        })
+    },
+    beforeDestroy() {
+        this.$root.$off('login-otp');
+    },
+    mounted() {
+        setTimeout(() => {
+            this.login = true;
+        }, 500);
+    }
+}
+</script>

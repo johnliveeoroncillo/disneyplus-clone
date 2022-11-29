@@ -17,6 +17,7 @@ export default {
   css: [
     { src: '@/assets/scss/global.scss', lang: "scss" },
     '@/assets/fonts/style.css',
+    '@/assets/css/animation.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
